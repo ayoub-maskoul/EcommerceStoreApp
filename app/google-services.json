@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "635093225548",
+    "project_id": "ecommercestoreapp-1106d",
+    "storage_bucket": "ecommercestoreapp-1106d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:635093225548:android:ea44d8ea73f7b07f3f24e9",
+        "android_client_info": {
+          "package_name": "com.example.addproduit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "635093225548-6s3gj53mjs7fjni5rmqqjj718onoc7ku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3NenCV7IuwkDkhzRE6d0qQSEkYI2Ta4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "635093225548-6s3gj53mjs7fjni5rmqqjj718onoc7ku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:635093225548:android:7dc649b495ca14173f24e9",
+        "android_client_info": {
+          "package_name": "com.example.ecommercestoreapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "635093225548-6s3gj53mjs7fjni5rmqqjj718onoc7ku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3NenCV7IuwkDkhzRE6d0qQSEkYI2Ta4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "635093225548-6s3gj53mjs7fjni5rmqqjj718onoc7ku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:635093225548:android:c4048c397dd695953f24e9",
+        "android_client_info": {
+          "package_name": "com.example.mystage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "635093225548-6s3gj53mjs7fjni5rmqqjj718onoc7ku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3NenCV7IuwkDkhzRE6d0qQSEkYI2Ta4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "635093225548-6s3gj53mjs7fjni5rmqqjj718onoc7ku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

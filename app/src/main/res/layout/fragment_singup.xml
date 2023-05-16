@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/page_bg">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Sign up"
+        android:textAppearance="@style/title_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/fnNameSing"
+        android:layout_width="343dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        android:layout_marginTop="74dp"
+        android:hint="first Name"
+        android:textColor="@color/black"
+        android:textColorHint="#9B9B9B"/>
+    <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/lNameSing"
+            android:layout_width="343dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fnNameSing"
+            android:layout_marginTop="10dp"
+            android:hint="Last Name"
+            android:textColor="@color/black"
+            android:textColorHint="#9B9B9B"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/emailSing"
+        android:layout_width="343dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:inputType="textEmailAddress"
+        app:layout_constraintTop_toBottomOf="@id/lNameSing"
+        android:layout_marginTop="10dp"
+        android:hint="Email"
+        android:textColor="@color/black"
+        android:textColorHint="#9B9B9B"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/passwordSing"
+        android:layout_width="343dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailSing"
+        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:hint="Password"
+        android:textColor="@color/black"
+        android:textColorHint="#9B9B9B"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/entrylLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Already have an account?  "
+        android:textColor="#222222"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordSing" />
+
+    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        android:id="@+id/sing_up"
+        android:text="SIGN UP"
+        android:layout_width="375dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button_back"
+        android:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/entrylLog"
+        app:spinning_bar_color="@color/black" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="Or sign up with social account"
+        android:textColor="#222222"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sing_up" />
+
+    <RelativeLayout
+        android:id="@+id/google_sing"
+        android:layout_width="92dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="195dp"
+        android:background="@drawable/login_icon_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_google" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fb_sing"
+        android:layout_width="92dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/login_icon_bg"
+        app:layout_constraintStart_toEndOf="@+id/google_sing"
+        app:layout_constraintTop_toBottomOf="@id/text">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_icon_fb" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

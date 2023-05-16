@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_signup_nav"
+    app:startDestination="@id/accountOptionFregment">
+
+    <fragment
+        android:id="@+id/loginFregment"
+        android:name="com.example.mystage.fragments.LoginFregment"
+        android:label="LoginFregment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFregment_to_singupFregment"
+            app:destination="@id/singupFregment"
+            app:enterAnim="@anim/slide_buttom"
+            app:exitAnim="@anim/silde_top"
+            app:popEnterAnim="@anim/silde_top"
+            app:popExitAnim="@anim/slide_buttom"
+            app:popUpTo="@id/accountOptionFregment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singupFregment"
+        android:name="com.example.mystage.fragments.SingupFregment"
+        android:label="SingupFregment"
+        tools:layout="@layout/fragment_singup">
+        <action
+            android:id="@+id/action_singupFregment_to_loginFregment"
+            app:destination="@id/loginFregment"
+            app:enterAnim="@anim/slide_buttom"
+            app:exitAnim="@anim/silde_top"
+            app:popEnterAnim="@anim/silde_top"
+            app:popExitAnim="@anim/slide_buttom"
+            app:popUpTo="@id/accountOptionFregment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accountOptionFregment"
+        android:name="com.example.mystage.fragments.AccountOptionFregment"
+        android:label="AccountOptionFregment"
+        tools:layout="@layout/fragment_account_options">
+        <action
+            android:id="@+id/action_accountOptionFregment_to_loginFregment"
+            app:destination="@id/loginFregment"
+            app:enterAnim="@anim/slide_right"
+            app:exitAnim="@anim/silde_to_left"
+            app:popEnterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/silde_to_right" />
+        <action
+            android:id="@+id/action_accountOptionFregment_to_singupFregment"
+            app:destination="@id/singupFregment"
+            app:enterAnim="@anim/slide_right"
+            app:exitAnim="@anim/silde_to_left"
+            app:popEnterAnim="@anim/slide_left"
+            app:popExitAnim="@anim/silde_to_right" />
+    </fragment>
+</navigation>
