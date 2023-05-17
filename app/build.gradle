@@ -56,6 +56,12 @@ dependencies {
 
     apply plugin :"kotlin-kapt"
 
+
+    //Navigation and safe args
+    def nav_version = "2.5.3"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
     //loading button
     implementation 'br.com.simplepass:loading-button-android:2.2.0'
 
@@ -83,7 +89,6 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:2.44"
 
     //Firebase
-//    implementation 'com.google.firebase:firebase-auth:22.0.0'
 }
 
 kapt {
