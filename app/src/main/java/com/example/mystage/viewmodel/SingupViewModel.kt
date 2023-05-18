@@ -3,13 +3,12 @@ package com.example.mystage.viewmodel
 import androidx.lifecycle.ViewModel
 import com.example.mystage.model.User
 import com.example.mystage.util.Constants.USER_COLLECTION
-import com.example.mystage.util.Ress
+import com.example.mystage.util.Resource
 import com.example.mystage.util.SignupFailed
 import com.example.mystage.util.SignupValidation
 import com.example.mystage.util.validateEmail
 import com.example.mystage.util.validatePassword
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -26,8 +25,8 @@ class SingupViewModel @Inject constructor(
     private val db:FirebaseFirestore
 ) : ViewModel(){
 
-    private val _regisrt =  MutableStateFlow<Ress<User>>(Ress.Unspecified())
-    val regisrt :Flow<Ress<User>> = _regisrt
+    private val _regisrt =  MutableStateFlow<Resource<User>>(Resource.Unspecified())
+    val regisrt :Flow<Resource<User>> = _regisrt
 
     private val _valid = Channel<SignupFailed>()
     val valid = _valid.receiveAsFlow()
@@ -35,7 +34,7 @@ class SingupViewModel @Inject constructor(
     fun creatAccount(user: User,password :String){
         if (checkVakidation(user, password)){
         runBlocking {
-            _regisrt.emit(Ress.Loading())
+            _regisrt.emit(Resource.Loading())
         }
         firebaseAuth.createUserWithEmailAndPassword(user.email, password)
             .addOnSuccessListener {
@@ -44,7 +43,7 @@ class SingupViewModel @Inject constructor(
                 }
             }
             .addOnFailureListener {
-                _regisrt.value = Ress.Error(it.message.toString())
+                _regisrt.value = Resource.Error(it.message.toString())
             }
         }else{
             val signupFailed = SignupFailed(
@@ -62,9 +61,9 @@ class SingupViewModel @Inject constructor(
             .document(userid)
             .set(user)
             .addOnSuccessListener {
-                _regisrt.value = Ress.Success(user)
+                _regisrt.value = Resource.Success(user)
             }.addOnFailureListener {
-                _regisrt.value = Ress.Error(it.message.toString())
+                _regisrt.value = Resource.Error(it.message.toString())
             }
 
     }

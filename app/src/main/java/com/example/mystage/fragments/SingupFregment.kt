@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -13,12 +12,11 @@ import androidx.navigation.fragment.findNavController
 import com.example.mystage.R
 import com.example.mystage.databinding.FragmentSingupBinding
 import com.example.mystage.model.User
-import com.example.mystage.util.Ress
+import com.example.mystage.util.Resource
 import com.example.mystage.util.SignupValidation
 import com.example.mystage.viewmodel.SingupViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
@@ -54,14 +52,14 @@ class SingupFregment:Fragment() {
         lifecycleScope.launchWhenStarted {
             viewModule.regisrt.collect{
                 when(it){
-                    is Ress.Loading ->{
+                    is Resource.Loading ->{
                         binding.singUp.startAnimation()
                     }
-                    is Ress.Success ->{
+                    is Resource.Success ->{
                         Log.d("test",it.data.toString())
                         binding.singUp.revertAnimation()
                     }
-                    is Ress.Error ->{
+                    is Resource.Error ->{
                         Log.d("test",it.message.toString())
                     }
                     else ->Unit

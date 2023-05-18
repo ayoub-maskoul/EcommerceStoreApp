@@ -1,7 +1,8 @@
-package com.example.mystage
+package com.example.mystage.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.mystage.R
 import dagger.hilt.android.AndroidEntryPoint
 
 

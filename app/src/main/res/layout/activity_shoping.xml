@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShopingActivity">
+    android:background="@color/white"
+    tools:context=".view.ShopingActivity">
 
     <fragment
         android:id="@+id/shoping_actiivity"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:defualtNavHost="true"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/bottomNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,14 +23,15 @@
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:background="@drawable/bg_menu"
         app:menu="@menu/bottom_nav_menu"
         app:labelVisibilityMode="unlabeled"
-        android:background="@drawable/bg_menu"
         app:elevation="0dp"
         app:itemPaddingTop="10dp"
         app:itemPaddingBottom="10dp"
         app:itemRippleColor="@color/yallow"
         app:itemIconTint="@drawable/bg_item_nav"
+        app:itemBackground="@drawable/bg_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>

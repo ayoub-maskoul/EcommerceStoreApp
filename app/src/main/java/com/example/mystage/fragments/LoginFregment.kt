@@ -11,14 +11,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.mystage.R
-import com.example.mystage.ShopingActivity
+import com.example.mystage.view.ShopingActivity
 import com.example.mystage.databinding.FragmentLoginBinding
-import com.example.mystage.databinding.FragmentSingupBinding
-import com.example.mystage.util.Ress
+import com.example.mystage.util.Resource
 import com.example.mystage.viewmodel.LoginViewModel
-import com.example.mystage.viewmodel.SingupViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
 class LoginFregment:Fragment() {
@@ -48,18 +45,18 @@ class LoginFregment:Fragment() {
         lifecycleScope.launchWhenStarted {
             viewModule.login.collect{
                 when(it){
-                    is Ress.Loading -> {
+                    is Resource.Loading -> {
                         binding.login.startAnimation()
 
                     }
-                    is Ress.Success -> {
+                    is Resource.Success -> {
                         binding.login.revertAnimation()
-                        Intent(requireActivity(),ShopingActivity::class.java).also {
+                        Intent(requireActivity(), ShopingActivity::class.java).also {
                             intent->intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                             startActivity(intent)
                         }
                     }
-                    is Ress.Error -> {
+                    is Resource.Error -> {
                         binding.login.revertAnimation()
                         Toast.makeText(requireContext(),it.message,Toast.LENGTH_LONG).show()
                     }
