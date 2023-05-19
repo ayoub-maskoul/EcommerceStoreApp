@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="150dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="0dp"
@@ -12,60 +12,64 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        
+
         <ImageView
-            android:id="@+id/imageSpecialRvItem"
+            android:id="@+id/imgBestDeal"
             android:layout_width="148dp"
             android:layout_height="184dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
-            android:id="@+id/tvSpecialProductName"
+            android:id="@+id/tvbestProductName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="Evening Dress"
             android:maxLines="2"
+            android:text="Evening Dress"
             android:textColor="#222222"
             android:textSize="19sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageSpecialRvItem" />
+            app:layout_constraintStart_toEndOf="@+id/imgBestDeal"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
-            android:id="@+id/tvSpecialPrdouctPrice"
+            android:id="@+id/tvbestPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="12$"
             android:textColor="#DB3022"
             android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSpecialProductName" />
+            app:layout_constraintStart_toEndOf="@+id/imgBestDeal"
+            app:layout_constraintTop_toBottomOf="@+id/tvbestProductName" />
+
 
         <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
             android:id="@+id/btn_add_to_cart"
             android:layout_width="77dp"
             android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/button_back"
             android:fontFamily="@font/poppins_light"
             android:text="Add to cart"
+            android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="10sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSpecialPrdouctPrice"
-            android:layout_marginTop="10dp"
-            android:textAllCaps="false"
-            />
+            app:layout_constraintStart_toEndOf="@+id/imgBestDeal"
+            app:layout_constraintTop_toBottomOf="@+id/tvbestPrice" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="152dp"
+            android:layout_marginEnd="-16dp"
+            android:layout_marginBottom="-16dp"
             android:src="@drawable/test"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

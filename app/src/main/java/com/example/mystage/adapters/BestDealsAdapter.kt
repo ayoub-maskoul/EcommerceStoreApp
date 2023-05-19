@@ -1,6 +1,7 @@
 package com.example.mystage.adapters
 
 
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -23,6 +24,7 @@ class BestDealsAdapter : RecyclerView.Adapter<BestDealsAdapter.BestDealsViewHold
                     tvNewPrice.text = "$ ${String.format("%.2f",priceAfterOffer)}"
                 }
                 tvOldPrice.text = "$ ${product.price}"
+                tvOldPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
                 tvDealProductName.text = product.name
             }
         }

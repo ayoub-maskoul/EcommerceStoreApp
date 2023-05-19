@@ -6,22 +6,20 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.mystage.databinding.SpecialRvItemBinding
+import com.example.mystage.databinding.BestProductItemBinding
 import com.example.mystage.model.Product
 
+class BestProductsAdapter :
+    RecyclerView.Adapter<BestProductsAdapter.BestProductsViewHolder>() {
 
-
-class SpecialProductsAdapter :
-    RecyclerView.Adapter<SpecialProductsAdapter.SpecialProductsViewHolder>() {
-
-    inner class SpecialProductsViewHolder(private val binding: SpecialRvItemBinding) :
+    inner class BestProductsViewHolder(private val binding: BestProductItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(product: Product) {
             binding.apply {
-                Glide.with(itemView).load(product.images[0]).into(imageSpecialRvItem)
-                tvSpecialProductName.text = product.name
-                tvSpecialPrdouctPrice.text = "$ ${product.price.toString()}"
+                Glide.with(itemView).load(product.images[0]).into(imgBestDeal)
+                tvbestProductName.text = product.name
+                tvbestPrice.text = "$ ${product.price.toString()}"
             }
         }
     }
@@ -38,15 +36,15 @@ class SpecialProductsAdapter :
 
     val differ = AsyncListDiffer(this, diffCallback)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpecialProductsViewHolder {
-        return SpecialProductsViewHolder(
-            SpecialRvItemBinding.inflate(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BestProductsViewHolder {
+        return BestProductsViewHolder(
+            BestProductItemBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
         )
     }
 
-    override fun onBindViewHolder(holder: SpecialProductsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BestProductsViewHolder, position: Int) {
         val product = differ.currentList[position]
         holder.bind(product)
 
