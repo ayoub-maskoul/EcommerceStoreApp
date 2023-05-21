@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mystage.R
@@ -16,6 +17,7 @@ import com.example.mystage.adapters.BestProductsAdapter
 import com.example.mystage.adapters.SpecialProductsAdapter
 import com.example.mystage.databinding.FragmentMainCategoryBinding
 import com.example.mystage.util.Resource
+import com.example.mystage.util.showBottomNavigationView
 import com.example.mystage.viewmodel.MainCategoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -46,6 +48,21 @@ class MainCategoryFragment:Fragment(R.layout.fragment_main_category){
         setupBestDealsRv()
 
         setupBestProduct()
+
+        specialProductsAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("product",it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
+        }
+
+        bestDealsAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("product",it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
+        }
+
+        bestProductsAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("product",it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
+        }
 
         lifecycleScope.launchWhenStarted {
             viewModel.specialProducts.collectLatest {
@@ -142,6 +159,12 @@ class MainCategoryFragment:Fragment(R.layout.fragment_main_category){
         }
     }
 
+
+    override fun onResume() {
+        super.onResume()
+
+        showBottomNavigationView()
+    }
 
 
 }
