@@ -1,9 +1,11 @@
 package com.example.mystage.dialog
 
-//
-//fun Fragment.setupBottomSheetDialog(
-//    onSendClick: (String) -> Unit
-//){
+import androidx.fragment.app.Fragment
+
+
+fun Fragment.setupBottomSheetDialog(
+    onSendClick: (String) -> Unit
+){
 //    val dialog = BottomSheetDialog(requireContext(),R.style.DialogStyle)
 //    val view = layoutInflater.inflate(R.layout.reset_passowrd_dialog,null)
 //    dialog.setContentView(view)
@@ -23,4 +25,4 @@ package com.example.mystage.dialog
 //    buttonCancel.setOnClickListener {
 //        dialog.dismiss()
 //    }
-//}
+}
