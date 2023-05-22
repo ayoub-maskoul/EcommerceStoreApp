@@ -11,7 +11,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.mystage.R
 import com.example.mystage.adapters.ColorsAdapter
 import com.example.mystage.adapters.SizesAdapter
 import com.example.mystage.adapters.ViewPager2Images
@@ -81,7 +80,7 @@ class ProductDetailsFragment :Fragment(){
 
                     is Resource.Success -> {
                         binding.buttonAddToCart.revertAnimation()
-                        binding.buttonAddToCart.setBackgroundColor(resources.getColor(R.color.black))
+                        findNavController().navigateUp()
                     }
 
                     is Resource.Error -> {

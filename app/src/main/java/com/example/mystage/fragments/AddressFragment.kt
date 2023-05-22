@@ -12,10 +12,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.mystage.model.Address
 import com.example.mystage.databinding.FragmentAddressBinding
+import com.example.mystage.model.Address
 import com.example.mystage.util.Resource
-import com.example.mystage.util.hideBottomNavigationView
 import com.example.mystage.viewmodel.AddressViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -65,6 +64,11 @@ class AddressFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+        binding.imageAddressClose.setOnClickListener {
+            findNavController().navigateUp()
+        }
 
         binding.apply {
             buttonSave.setOnClickListener {

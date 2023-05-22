@@ -1,6 +1,5 @@
 package com.example.mystage.fragments
 
-
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -18,11 +17,12 @@ import com.example.mystage.adapters.CartProductAdapter
 import com.example.mystage.databinding.FragmentCartBinding
 import com.example.mystage.firebase.FirebaseCommon
 import com.example.mystage.util.Resource
+import com.example.mystage.util.VerticalItemDecoration
 import com.example.mystage.util.showBottomNavigationView
 import com.example.mystage.viewmodel.CartViewModel
 import kotlinx.coroutines.flow.collectLatest
 
-class CartFragment : Fragment(R.layout.fragment_cart) {
+class CartFragment : Fragment() {
     private lateinit var binding: FragmentCartBinding
     private val cartAdapter by lazy { CartProductAdapter() }
     private val viewModel by activityViewModels<CartViewModel>()
@@ -67,8 +67,8 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
         }
 
         binding.buttonCheckout.setOnClickListener {
-//            val action = CartFragmentDirections.actionCartFragmentToBillingFragment2(totalPrice,cartAdapter.differ.currentList.toTypedArray())
-//            findNavController().navigate(action)
+            val action = CartFragmentDirections.actionCartFragmentToBillingFragment2(totalPrice,cartAdapter.differ.currentList.toTypedArray())
+            findNavController().navigate(action)
         }
 
 
@@ -150,7 +150,7 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
         binding.rvCart.apply {
             layoutManager = LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
             adapter = cartAdapter
-//            addItemDecoration(VerticalItemDecoration())
+            addItemDecoration(VerticalItemDecoration())
         }
     }
 
