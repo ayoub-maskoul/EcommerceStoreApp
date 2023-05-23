@@ -21,9 +21,9 @@ class AddressAdapter : Adapter<AddressAdapter.AddressViewHolder>() {
                 buttonAddress.text = address.addressTitle
                 if (isSelected){
                     buttonAddress.background = ColorDrawable(itemView.context.resources.getColor(R.color.yallow))
+                    buttonAddress.setTextColor(itemView.context.resources.getColor(R.color.white))
                 }else{
                     buttonAddress.setTextColor(itemView.context.resources.getColor(R.color.yallow))
-
                     buttonAddress.background = ColorDrawable(itemView.context.resources.getColor(R.color.white))
                 }
             }

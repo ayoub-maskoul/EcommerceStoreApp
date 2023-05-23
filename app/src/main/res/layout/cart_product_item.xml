@@ -56,22 +56,18 @@
 
         <ImageView
             android:id="@+id/imagePlus"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginStart="120dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/bg_favort"
-            android:src="@drawable/ic_plus"
+            android:src="@drawable/ic_plus2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/imageMinus"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginStart="32dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/bg_favort"
             android:src="@drawable/ic_minus"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imagePlus" />
@@ -90,7 +86,8 @@
             android:id="@+id/color"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Color: "
+            android:text="Color:"
+            android:textColor="#9B9B9B"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toEndOf="@+id/imageCartProduct"
@@ -113,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="8dp"
-            android:src="#9B9B9B"
+            android:textColor="#9B9B9B"
             android:text="Size: "
             app:layout_constraintStart_toEndOf="@id/imageCartProductColor"
             app:layout_constraintTop_toBottomOf="@id/tvProductCartName" />
@@ -123,7 +120,7 @@
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:src="#9B9B9B"
             app:layout_constraintStart_toEndOf="@id/size"
             app:layout_constraintTop_toBottomOf="@id/tvProductCartName" />

@@ -48,13 +48,13 @@
 
         <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
             android:id="@+id/btn_add_to_cart"
-            android:layout_width="77dp"
+            android:layout_width="120dp"
             android:layout_height="25dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_back"
             android:fontFamily="@font/poppins_light"
-            android:text="Add to cart"
+            android:text="more information"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="10sp"

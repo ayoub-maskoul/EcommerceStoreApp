@@ -31,7 +31,6 @@
         app:itemPaddingBottom="10dp"
         app:itemRippleColor="@color/yallow"
         app:itemIconTint="@drawable/bg_item_nav"
-        app:itemBackground="@drawable/bg_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
