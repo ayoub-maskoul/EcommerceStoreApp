@@ -4,6 +4,7 @@ package com.example.mystage.adapters
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
@@ -29,6 +30,11 @@ class CartProductAdapter: RecyclerView.Adapter<CartProductAdapter.CartProductsVi
 
                 imageCartProductColor.setImageDrawable(ColorDrawable(cartProduct.selectedColor?: Color.TRANSPARENT))
                 tvCartProductSize.text = cartProduct.selectedSize?:"".also { imageCartProductSize.setImageDrawable(ColorDrawable(Color.TRANSPARENT)) }
+                if(cartProduct.selectedSize.isNullOrEmpty()){
+                    size.visibility = View.INVISIBLE
+                }
+
+
             }
         }
     }

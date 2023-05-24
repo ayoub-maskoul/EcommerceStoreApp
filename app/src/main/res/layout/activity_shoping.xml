@@ -27,10 +27,12 @@
         app:menu="@menu/bottom_nav_menu"
         app:labelVisibilityMode="unlabeled"
         app:elevation="0dp"
+        app:itemBackground="@color/white"
         app:itemPaddingTop="10dp"
         app:itemPaddingBottom="10dp"
         app:itemRippleColor="@color/yallow"
         app:itemIconTint="@drawable/bg_item_nav"
+        app:itemActiveIndicatorStyle="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>

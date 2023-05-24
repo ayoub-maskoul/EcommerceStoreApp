@@ -225,7 +225,7 @@
             android:layout_marginTop="45dp"
             android:layout_marginBottom="20dp"
             android:text="Place Order"
-            android:background="@color/yallow"
+            android:background="@drawable/yallow_background"
             android:textColor="@color/white"
             app:spinning_bar_color="@color/white"/>
 

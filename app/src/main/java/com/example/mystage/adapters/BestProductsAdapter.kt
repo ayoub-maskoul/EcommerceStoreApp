@@ -20,7 +20,9 @@ class BestProductsAdapter :
                 Glide.with(itemView).load(product.images[0]).into(imgBestDeal)
                 tvbestProductName.text = product.name
                 tvbestPrice.text = "$ ${product.price.toString()}"
-            }
+                btnMoreAnfo.setOnClickListener {
+                    onClick?.invoke(product)
+                }           }
         }
     }
 
@@ -51,6 +53,8 @@ class BestProductsAdapter :
         holder.itemView.setOnClickListener {
             onClick?.invoke(product)
         }
+
+
     }
 
     override fun getItemCount(): Int {

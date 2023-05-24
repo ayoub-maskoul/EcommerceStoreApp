@@ -10,10 +10,9 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mystage.adapters.BillingProductsAdapter
+import com.example.mystage.databinding.FragmentOrderDetailBinding
 import com.example.mystage.model.OrderStatus
 import com.example.mystage.model.getOrderStatus
-import com.example.mystage.databinding.FragmentOrderDetailBinding
-import com.example.mystage.databinding.FragmentOrdersBinding
 import com.example.mystage.util.VerticalItemDecoration
 import com.example.mystage.util.hideBottomNavigationView
 
@@ -50,6 +49,7 @@ class OrderDetailFragment : Fragment() {
                     OrderStatus.Confirmed.status,
                     OrderStatus.Shipped.status,
                     OrderStatus.Delivered.status,
+                    OrderStatus.Returned.status,
                 )
             )
 
@@ -58,10 +58,11 @@ class OrderDetailFragment : Fragment() {
                 is OrderStatus.Confirmed -> 1
                 is OrderStatus.Shipped -> 2
                 is OrderStatus.Delivered -> 3
+                is OrderStatus.Returned -> 4
                 else -> 0
             }
 
-            stepView.go(currentOrderState, false)
+            stepView.go(currentOrderState, true)
             if (currentOrderState == 3) {
                 stepView.done(true)
             }

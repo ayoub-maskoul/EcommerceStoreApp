@@ -26,6 +26,9 @@ class BestDealsAdapter : RecyclerView.Adapter<BestDealsAdapter.BestDealsViewHold
                 tvOldPrice.text = "$ ${product.price}"
                 tvOldPrice.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
                 tvDealProductName.text = product.name
+                btnMoreAnfo.setOnClickListener {
+                    onClick?.invoke(product)
+                }
             }
         }
     }

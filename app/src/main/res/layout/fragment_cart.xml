@@ -151,7 +151,7 @@
             android:layout_marginTop="45dp"
             android:layout_marginBottom="20dp"
             android:text="Check out"
-            android:background="@color/yallow"
+            android:background="@drawable/yallow_background"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@id/rightGuideLine"
             app:layout_constraintStart_toStartOf="@id/leftGuideLine"
