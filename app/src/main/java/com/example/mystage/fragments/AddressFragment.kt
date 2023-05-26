@@ -12,7 +12,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.mystage.R
 import com.example.mystage.databinding.FragmentAddressBinding
+
+
 import com.example.mystage.model.Address
 import com.example.mystage.util.Resource
 import com.example.mystage.viewmodel.AddressViewModel
@@ -20,7 +23,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
 @AndroidEntryPoint
-class AddressFragment : Fragment() {
+class AddressFragment : Fragment(R.layout.fragment_address) {
     private lateinit var binding: FragmentAddressBinding
     val viewModel by viewModels<AddressViewModel>()
 
