@@ -31,7 +31,7 @@ To get started with Employees Manager, follow these steps:
 
 ## Contributors
 
-- [Ayoub Maskoul] ([GitHub](https://github.com/ayoub-maskoul) , [LinkedIn](https://www.linkedin.com/in/ayoub-maskoul-345bba266/)
+- [Ayoub Maskoul] ([GitHub](https://github.com/ayoub-maskoul) , [LinkedIn](https://www.linkedin.com/in/ayoub-maskoul-345bba266/))
 - Mohamed Massan ([GitHub](https://github.com/Mohamed-Massan), [LinkedIn](https://ma.linkedin.com/in/mohamed-massan))
 
 
