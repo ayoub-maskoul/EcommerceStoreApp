@@ -1,5 +1,5 @@
 # EcommerceStoreApp
-![alt text](https://github.com/Mohamed-Massan/EcommerceStoreApp/blob/main/preview_image.png)
+![alt text](https://github.com/ayoub-maskoul/EcommerceStoreApp/blob/main/preview_image.png)
 
 This is an Android application for an ecommerce store. The app allows users to browse, search for, and purchase products through their mobile device.
 
