@@ -12,40 +12,58 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Login"
+        android:fontFamily="@font/poppins_thin"
         android:textAppearance="@style/title_1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.07"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/emailLogin"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout"
         android:layout_width="343dp"
         android:layout_height="wrap_content"
         android:background="@drawable/input_bg"
+        app:hintTextColor="@color/g_gray500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView"
-        android:layout_marginTop="74dp"
-        android:textColor="@color/black"
-        android:hint="Email"
-        android:textColorHint="#9B9B9B"/>
+        android:layout_marginTop="74dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_bg"
+            android:textColorHint="@color/g_gray500"
+            android:textColor="@color/black"
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/poppins_thin"
+            android:hint="Email"/>
 
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/passwordLogin"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout2"
         android:layout_width="343dp"
         android:layout_height="wrap_content"
         android:background="@drawable/input_bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/emailLogin"
+        app:layout_constraintTop_toBottomOf="@id/text_input_layout"
         android:layout_marginTop="10dp"
-        android:inputType="textPassword"
-        android:hint="Password"
-        android:textColor="@color/black"
-        android:textColorHint="#9B9B9B"/>
+        app:hintTextColor="@color/g_gray500">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_bg"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:fontFamily="@font/poppins_thin"
+            android:textColor="@color/black"
+            android:textColorHint="#9B9B9B"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/forpass"
@@ -54,11 +72,12 @@
         android:layout_marginTop="16dp"
         android:drawableEnd="@drawable/ic_arrow_right"
         android:text="Forgot your password?  "
+        android:fontFamily="@font/poppins_thin"
         android:textColor="#222222"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.82"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passwordLogin" />
+        app:layout_constraintTop_toBottomOf="@id/text_input_layout2" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/loginPageSign"
@@ -67,6 +86,7 @@
         android:layout_marginTop="20dp"
         android:drawableEnd="@drawable/ic_arrow_right"
         android:text="Don't have an account?  "
+        android:fontFamily="@font/poppins_thin"
         android:textColor="#222222"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.82"

@@ -11,11 +11,14 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.mystage.R
-import com.example.mystage.view.ShopingActivity
 import com.example.mystage.databinding.FragmentLoginBinding
 import com.example.mystage.util.Resource
+import com.example.mystage.util.SignupValidation
+import com.example.mystage.view.ShopingActivity
 import com.example.mystage.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
 class LoginFregment:Fragment() {
@@ -64,5 +67,27 @@ class LoginFregment:Fragment() {
                 }
             }
         }
+
+        lifecycleScope.launchWhenStarted {
+            viewModule.valid.collect{ valid ->
+                if (valid.email is SignupValidation.Failed){
+                    withContext(Dispatchers.Main){
+                        binding.emailLogin.apply {
+                            requestFocus()
+                            error = valid.email.message
+                        }
+                    }
+                }
+                if (valid.password is SignupValidation.Failed){
+                    withContext(Dispatchers.Main){
+                        binding.passwordLogin.apply {
+                            requestFocus()
+                            error = valid.password.message
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }

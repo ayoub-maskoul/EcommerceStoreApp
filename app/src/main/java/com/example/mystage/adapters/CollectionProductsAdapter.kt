@@ -11,8 +11,8 @@ import com.example.mystage.model.Product
 
 
 
-class SpecialProductsAdapter :
-    RecyclerView.Adapter<SpecialProductsAdapter.SpecialProductsViewHolder>() {
+class CollectionProductsAdapter :
+    RecyclerView.Adapter<CollectionProductsAdapter.SpecialProductsViewHolder>() {
 
     inner class SpecialProductsViewHolder(private val binding: SpecialRvItemBinding) :
         RecyclerView.ViewHolder(binding.root) {

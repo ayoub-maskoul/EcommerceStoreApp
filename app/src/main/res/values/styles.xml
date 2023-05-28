@@ -12,4 +12,13 @@
     </style>
 
     <style name="MediumTextViewThin"></style>
+
+    <style name="Style.InputLayout" parent="Widget.Design.TextInputLayout">
+        <item name="hintTextAppearance">@style/HintText</item>
+    </style>
+
+    <style name="HintText" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 </resources>

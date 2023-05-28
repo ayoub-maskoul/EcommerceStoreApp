@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mystage.R
 import com.example.mystage.adapters.BestDealsAdapter
 import com.example.mystage.adapters.BestProductsAdapter
-import com.example.mystage.adapters.SpecialProductsAdapter
+import com.example.mystage.adapters.CollectionProductsAdapter
 import com.example.mystage.databinding.FragmentMainCategoryBinding
 import com.example.mystage.util.Resource
 import com.example.mystage.util.showBottomNavigationView
@@ -26,7 +26,7 @@ import kotlinx.coroutines.flow.collectLatest
 @AndroidEntryPoint
 class MainCategoryFragment:Fragment(R.layout.fragment_main_category){
     private lateinit var binding: FragmentMainCategoryBinding
-    private lateinit var specialProductsAdapter: SpecialProductsAdapter
+    private lateinit var collectionProductsAdapter: CollectionProductsAdapter
     private lateinit var bestDealsAdapter: BestDealsAdapter
     private lateinit var bestProductsAdapter: BestProductsAdapter
     private val viewModel by viewModels<MainCategoryViewModel>()
@@ -49,7 +49,7 @@ class MainCategoryFragment:Fragment(R.layout.fragment_main_category){
 
         setupBestProduct()
 
-        specialProductsAdapter.onClick = {
+        collectionProductsAdapter.onClick = {
             val b = Bundle().apply { putParcelable("product",it) }
             findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
         }
@@ -71,7 +71,7 @@ class MainCategoryFragment:Fragment(R.layout.fragment_main_category){
                         showLoading()
                     }
                     is Resource.Success -> {
-                        specialProductsAdapter.differ.submitList(it.data)
+                        collectionProductsAdapter.differ.submitList(it.data)
                         hideLoading()
 
                     }
@@ -134,10 +134,10 @@ class MainCategoryFragment:Fragment(R.layout.fragment_main_category){
     }
 
     private fun setupCollleProductsRv() {
-        specialProductsAdapter = SpecialProductsAdapter()
+        collectionProductsAdapter = CollectionProductsAdapter()
         binding.rvSpecialProducts.apply {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-            adapter = specialProductsAdapter
+            adapter = collectionProductsAdapter
         }
     }
 
