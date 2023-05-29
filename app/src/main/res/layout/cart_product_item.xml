@@ -10,18 +10,18 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="104dp">
+        android:layout_height="110dp">
 
 
         <ImageView
             android:id="@+id/imageCartProduct"
             android:layout_width="104dp"
             android:layout_height="104dp"
-            android:layout_marginBottom="5dp"
+            android:layout_marginTop="2dp"
             android:scaleType="centerCrop"
             android:src="@color/yallow"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvProductCartName"

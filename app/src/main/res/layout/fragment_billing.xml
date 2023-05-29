@@ -87,7 +87,7 @@
             android:id="@+id/tvShoppingAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Shipping Address"
+            android:text="Shopping Address"
             android:fontFamily="@font/poppins_thin"
             app:layout_constraintStart_toStartOf="@id/leftGuideline"
             android:textColor="@color/black"

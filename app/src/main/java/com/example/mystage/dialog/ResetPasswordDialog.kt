@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 fun Fragment.setupBottomSheetDialog(
     onSendClick: (String) -> Unit
 ){
+    /**Not finishing for now but son :)
+     *
+     */
 //    val dialog = BottomSheetDialog(requireContext(),R.style.DialogStyle)
 //    val view = layoutInflater.inflate(R.layout.reset_passowrd_dialog,null)
 //    dialog.setContentView(view)

@@ -2,6 +2,7 @@ package com.example.mystage.fragments
 
 
 //import com.example.mystage.BuildConfig
+import android.app.AlertDialog
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -61,10 +62,7 @@ class ProfileFragment : Fragment() {
         }
 
         binding.linearLogOut.setOnClickListener {
-            viewModel.logout()
-            val intent = Intent(requireActivity(), MainActivity::class.java)
-            startActivity(intent)
-            requireActivity().finish()
+            showLogOutConfirmationDialog()
         }
 
 //        binding.tvVersion.text = "Version ${BuildConfig.VERSION_CODE}"
@@ -97,5 +95,24 @@ class ProfileFragment : Fragment() {
         super.onResume()
 
         showBottomNavigationView()
+    }
+    private fun showLogOutConfirmationDialog() {
+        val alertDialog = AlertDialog.Builder(requireContext()).apply {
+            setTitle("Log Out")
+            setMessage("Log out of account?")
+            setNegativeButton("Cancel") { dialog, _ ->
+
+                dialog.dismiss()
+            }
+            setPositiveButton("Yes") { dialog, _ ->
+                viewModel.logout()
+                val intent = Intent(requireActivity(), MainActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
+                dialog.dismiss()
+            }
+        }
+        alertDialog.create()
+        alertDialog.show()
     }
 }

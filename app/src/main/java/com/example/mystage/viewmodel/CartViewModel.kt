@@ -4,15 +4,19 @@ package com.example.mystage.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mystage.model.CartProduct
 import com.example.mystage.firebase.FirebaseCommon
 import com.example.mystage.helper.getProductPrice
+import com.example.mystage.model.CartProduct
 import com.example.mystage.util.Resource
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -86,10 +90,6 @@ class CartViewModel @Inject constructor(
 
         val index = cartProducts.value.data?.indexOf(cartProduct)
 
-        /**
-         * index could be equal to -1 if the function [getCartProducts] delays which will also delay the result we expect to be inside the [_cartProducts]
-         * and to prevent the app from crashing we make a check
-         */
         if (index != null && index != -1) {
             val documentId = cartProductDocuments[index].id
             when (quantityChanging) {

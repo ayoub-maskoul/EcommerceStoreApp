@@ -28,7 +28,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView"
-        android:layout_marginTop="74dp">
+        android:layout_marginTop="74dp"
+        android:textColorHint="#9B9B9B">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailLogin"
             android:layout_width="match_parent"
@@ -36,6 +37,7 @@
             android:background="@drawable/input_bg"
             android:textColorHint="@color/g_gray500"
             android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/color_cursor"
             android:inputType="textEmailAddress"
             android:fontFamily="@font/poppins_thin"
             android:hint="Email"/>
@@ -51,7 +53,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_input_layout"
         android:layout_marginTop="10dp"
-        app:hintTextColor="@color/g_gray500">
+        app:hintTextColor="@color/g_gray500"
+        android:textColorHint="#9B9B9B">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/passwordLogin"
@@ -60,9 +63,9 @@
             android:background="@drawable/input_bg"
             android:inputType="textPassword"
             android:hint="Password"
+            android:textCursorDrawable="@drawable/color_cursor"
             android:fontFamily="@font/poppins_thin"
-            android:textColor="@color/black"
-            android:textColorHint="#9B9B9B"/>
+            android:textColor="@color/black"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatTextView

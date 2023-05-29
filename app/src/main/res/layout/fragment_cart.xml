@@ -25,17 +25,6 @@
                 android:layout_height="match_parent">
 
 
-<!--                <ImageView-->
-<!--                    android:id="@+id/imageCloseCart"-->
-<!--                    android:layout_width="20dp"-->
-<!--                    android:layout_height="20dp"-->
-<!--                    android:scaleType="centerInside"-->
-<!--                    android:src="@drawable/ic_close"-->
-<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    app:tint="@color/black" />-->
-
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -73,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.68" />
+            app:layout_constraintGuide_percent="0.74" />
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -104,7 +93,7 @@
             android:id="@+id/totalBoxContainer"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="@id/rightGuideLine"
             app:layout_constraintStart_toStartOf="@id/leftGuideLine"
             app:layout_constraintTop_toBottomOf="@id/bottomGuideLine">
@@ -117,7 +106,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
                 android:fontFamily="@font/sf_pro_display"
-                android:text="Total"
+                android:text="Total Price"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -148,10 +137,9 @@
             android:id="@+id/buttonCheckout"
             android:layout_width="343dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
-            android:layout_marginBottom="20dp"
-            android:text="Check out"
+            android:layout_marginTop="24dp"
             android:background="@drawable/yallow_background"
+            android:text="Check out"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="@id/rightGuideLine"
             app:layout_constraintStart_toStartOf="@id/leftGuideLine"
