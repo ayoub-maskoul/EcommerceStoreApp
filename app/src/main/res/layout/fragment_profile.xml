@@ -176,6 +176,34 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/linearfavorite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/tvfavorite"
+                        style="@style/MediumTextViewThin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="1"
+                        android:text="Favorite"
+                        android:textColor="@color/g_gray700"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_arrow"
+                        app:tint="@color/g_blue_gray200" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:id="@+id/linearBilling"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
