@@ -90,7 +90,7 @@
                     app:layout_constraintBottom_toBottomOf="@id/tvUserEmail"
                     app:layout_constraintEnd_toEndOf="@id/constraintProfile"
                     app:layout_constraintTop_toTopOf="@id/tvUserName"
-                    app:tint="@color/g_blue_gray200" />
+                    app:tint="@color/blue_gray" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -143,7 +143,7 @@
                         android:layout_height="15dp"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/ic_arrow"
-                        app:tint="@color/g_blue_gray200" />
+                        app:tint="@color/blue_gray" />
                 </LinearLayout>
 
 
@@ -172,7 +172,7 @@
                         android:layout_height="15dp"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/ic_arrow"
-                        app:tint="@color/g_blue_gray200" />
+                        app:tint="@color/blue_gray" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -200,7 +200,7 @@
                         android:layout_height="15dp"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/ic_arrow"
-                        app:tint="@color/g_blue_gray200" />
+                        app:tint="@color/blue_gray" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -228,7 +228,7 @@
                         android:layout_height="15dp"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/ic_arrow"
-                        app:tint="@color/g_blue_gray200" />
+                        app:tint="@color/blue_gray" />
                 </LinearLayout>
 
 
@@ -257,7 +257,7 @@
                         android:layout_height="15dp"
                         android:layout_gravity="center_vertical"
                         android:src="@drawable/ic_arrow"
-                        app:tint="@color/g_blue_gray200" />
+                        app:tint="@color/blue_gray" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -372,7 +372,7 @@
                         android:layout_width="15dp"
                         android:layout_height="15dp"
                         android:src="@drawable/ic_arrow"
-                        app:tint="@color/g_blue_gray200"
+                        app:tint="@color/blue_gray"
                         android:layout_gravity="center_vertical"/>
                 </LinearLayout>
 
