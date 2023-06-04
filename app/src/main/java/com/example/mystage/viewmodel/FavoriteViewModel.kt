@@ -60,11 +60,11 @@ class FavoriteViewModel  @Inject constructor(
 
 
     init {
-        getCartProducts()
+        getFavoriteProducts()
     }
 
 
-    private fun getCartProducts() {
+    private fun getFavoriteProducts() {
         viewModelScope.launch { _favoriteProducts.emit(Resource.Loading()) }
         firestore.collection("user").document(auth.uid!!).collection("favorite")
             .addSnapshotListener { value, error ->
