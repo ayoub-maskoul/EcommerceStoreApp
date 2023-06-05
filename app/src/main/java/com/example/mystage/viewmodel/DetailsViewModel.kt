@@ -2,8 +2,9 @@ package com.example.mystage.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mystage.model.CartProduct
 import com.example.mystage.firebase.FirebaseCommon
+import com.example.mystage.model.CartProduct
+import com.example.mystage.model.Product
 import com.example.mystage.util.Resource
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -22,6 +23,9 @@ class DetailsViewModel @Inject constructor(
 
     private val _addToCart = MutableStateFlow<Resource<CartProduct>>(Resource.Unspecified())
     val addToCart = _addToCart.asStateFlow()
+
+    private val _addToFavorite = MutableStateFlow<Resource<Product>>(Resource.Unspecified())
+    val addToFavorite = _addToFavorite.asStateFlow()
 
     fun addUpdateProductInCart(cartProduct: CartProduct) {
         viewModelScope.launch { _addToCart.emit(Resource.Loading()) }
@@ -53,6 +57,16 @@ class DetailsViewModel @Inject constructor(
                     _addToCart.emit(Resource.Success(addedProduct!!))
                 else
                     _addToCart.emit(Resource.Error(e.message.toString()))
+            }
+        }
+    }
+    private fun addNewProductFavorite(product: Product) {
+        firebaseCommon.addProductToFavorite(product) { addedProduct, e ->
+            viewModelScope.launch {
+                if (e == null)
+                    _addToFavorite.emit(Resource.Success(addedProduct!!))
+                else
+                    _addToFavorite.emit(Resource.Error(e.message.toString()))
             }
         }
     }

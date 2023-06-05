@@ -1,6 +1,7 @@
 package com.example.mystage.firebase
 
 import com.example.mystage.model.CartProduct
+import com.example.mystage.model.Product
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -13,11 +14,21 @@ class FirebaseCommon(
 
     private val cartCollection =
         firestore.collection("user").document(auth.uid!!).collection("cart")
+    private val favoriteCollection =
+        firestore.collection("user").document(auth.uid!!).collection("favorite")
 
     fun addProductToCart(cartProduct: CartProduct, onResult: (CartProduct?, Exception?) -> Unit) {
         cartCollection.document().set(cartProduct)
             .addOnSuccessListener {
                 onResult(cartProduct, null)
+            }.addOnFailureListener {
+                onResult(null, it)
+            }
+    }
+    fun addProductToFavorite(product: Product, onResult: (Product?, Exception?) -> Unit) {
+        cartCollection.document().set(product)
+            .addOnSuccessListener {
+                onResult(product, null)
             }.addOnFailureListener {
                 onResult(null, it)
             }
